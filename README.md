@@ -50,6 +50,7 @@ I only had Contributor on the resource group, so I could not build everything. T
 - Entra groups, Conditional Access and MFA rollout
 - Role assignments (RBAC) for the groups
 - Azure Policy for allowed regions and required tags
+- Azure Backup for the file share and the SQL database. Only the VM is backed up in the template.
 
 The script and the template parameters for the groups, roles and policies are ready, but they have not been tested. I also tried to create a storage account in East US. It was not blocked, because the school's policy did not enforce the region rule. So the EU-only rule is designed but not proven.
 
