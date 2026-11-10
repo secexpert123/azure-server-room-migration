@@ -53,7 +53,7 @@ var tagsIt = union(baseTags, { avdelning: 'IT' })
 var tagsEkonomi = union(baseTags, { avdelning: 'Ekonomi' })
 var tagsProjekt = union(baseTags, { avdelning: 'Projekt' })
 
-var vmSize = !empty(vmSizeOverride) ? vmSizeOverride : (isProd ? 'Standard_B2ms' : 'Standard_B2s')
+var vmSize = !empty(vmSizeOverride) ? vmSizeOverride : (isProd ? 'Standard_B2ls_v2' : 'Standard_B2s')
 var diskType = isProd ? 'StandardSSD_LRS' : 'Standard_LRS'
 var planSku = isProd ? { name: 'B1', tier: 'Basic' } : { name: 'F1', tier: 'Free' }
 var shareTier = isProd ? 'Cool' : 'TransactionOptimized'
