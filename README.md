@@ -19,7 +19,7 @@ Vindö Bygg has 85 employees in Uppsala and four departments: Ledning, Ekonomi, 
 
 ## What I built and tested
 
-I deployed a small dev copy in a resource group on a student subscription, then deleted it after testing.
+I deployed a small dev copy in a resource group on a student subscription, then deleted it after testing. The web app only shows the default Azure start page, and no real application or data was moved.
 
 - Storage account with an Azure Files share, soft delete 14 days, TLS 1.2, no public blob access
 - App Service and Azure SQL (serverless, auto-pause) for the project portal
@@ -36,6 +36,8 @@ Results from the tests:
 - Cost analysis grouped by the avdelning tag shows cost per department.
 
 The production estimate from the Azure Pricing Calculator is about SEK 1,443 per month.
+
+One caveat: after the backup test I changed the backup time in the template to 18:00 Stockholm time. I did not deploy that version again.
 
 ## What I only described
 
