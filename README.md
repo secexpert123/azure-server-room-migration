@@ -2,6 +2,10 @@
 
 A plan and a small working build for moving a fictional construction company, Vindö Bygg AB, from an on-prem server room to Azure. I did this as an individual project in my Cloud & ICT Engineering studies in Stockholm. The plan follows the Microsoft Cloud Adoption Framework.
 
+![Target architecture for the production setup](architecture.png)
+
+The diagram shows the proposed production design. The dev copy I built and tested is a smaller version of it.
+
 ## The scenario
 
 Vindö Bygg has 85 employees in Uppsala and four departments: Ledning, Ekonomi, Projekt and Inköp. Site managers work on building sites with laptops and tablets on the mobile network. The company wants to close its server room within six months. Management had five wishes:
