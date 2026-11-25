@@ -38,6 +38,7 @@ Results from the tests:
 - Backup now and restore of the VM worked. The restore took 2 minutes 16 seconds, well inside my 4 hour recovery target.
 - I pushed the CPU above the threshold on purpose. The alert fired and the email arrived.
 - Cost analysis grouped by the avdelning tag shows cost per department.
+- I reviewed Azure Advisor (5 security, 10 reliability and 1 operational excellence recommendations) and the policy compliance view. I did not fix them in the short dev copy. I ranked them for production: Defender for SQL, an Entra administrator for SQL, a private endpoint, then Trusted Launch and GRS backup.
 
 The production estimate from the Azure Pricing Calculator is about SEK 1,443 per month.
 
@@ -50,7 +51,7 @@ I only had Contributor on the resource group, so I could not build everything. T
 - Entra groups, Conditional Access and MFA rollout
 - Role assignments (RBAC) for the groups
 - Azure Policy for allowed regions and required tags
-- Azure Backup for the file share and the SQL database. Only the VM is backed up in the template.
+- Azure Backup for the file share. Only the VM is backed up in the template. Azure SQL Database uses its built-in automatic backups.
 
 The script and the template parameters for the groups, roles and policies are ready, but they have not been tested. I also tried to create a storage account in East US. It was not blocked, because the school's policy did not enforce the region rule. So the EU-only rule is designed but not proven.
 
@@ -75,7 +76,7 @@ A vault that holds backup data cannot be deleted straight away. Stop protection 
 - Backup vault with GRS and cross region restore, keeping the copy in the EU
 - Defender for SQL and an Entra administrator for the SQL server, instead of a SQL password
 - Private endpoint for the database
-- Trusted Launch and a Premium or Standard SSD OS disk for the finance VM
+- Trusted Launch and a Premium SSD OS disk for the finance VM (the template already uses Standard SSD in prod)
 - Paid App Service plan with two instances and a health check
 - Azure Bastion or just-in-time access instead of RDP from an IP address
 
